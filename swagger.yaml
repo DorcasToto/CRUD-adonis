@@ -1,0 +1,84 @@
+swagger: "2.0"
+info:
+  description: |
+    This is a simple adonis application that READ, STORE, UPDATE, DELETE and SHOW interns.
+  version: "2.0"
+  title: CRUD Interns
+ 
+paths:
+  /api/v1/interns:
+    get:
+      summary: list of interns.
+      description: Returns a list of interns.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        404:
+          description: not found
+        
+    post:
+      summary: Stores interns.
+      description: Stores intern details.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        204:
+          description:  not content
+  /api/v1/interns/{id}:
+    get:
+      summary: Returns a list of interns.
+      description: Returns a list of interns and their details.
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        200:
+          description: OK
+        404:
+          description: not found
+        
+    put:
+      summary: Update interns.
+      description: Updates intern details.
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        200:
+          description: OK
+        404:
+          description:  not found
+    delete:
+      summary: Delete interns .
+      description: Delete intern details .
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          minimum: 1
+          description: Parameter description in Markdown.
+      responses:
+        200:
+          description: OK
+        404:
+          description:  not found
+       
